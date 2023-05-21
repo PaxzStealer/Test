@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egg Opener</title>
+    <style>
+        #egg {
+            width: 200px;
+            height: 200px;
+            background-image: url('closed_egg.png');
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="egg"></div>
+    <button onclick="openEgg()">Open Egg</button>
+    <div id="results">
+        <h2>Collected Items:</h2>
+        <ul id="collectedItems"></ul>
+    </div>
+
+    <script>
+        var items = [];
+
+        function openEgg() {
+            var egg = document.getElementById('egg');
+            var button = document.querySelector('button');
+            button.disabled = true;
+            egg.style.animation = 'shake 0.5s linear';
+
+            setTimeout(function() {
+                egg.style.animation = '';
+                button.disabled = false;
+
+                var item = getRandItem();
+                items.push(item);
+
+                var listItem = document.createElement('li');
+                listItem.textContent = item;
+                document.getElementById('collectedItems').appendChild(listItem);
+            }, 3000);
+        }
+
+        function getRandItem() {
+            var items = ['Chicken', 'Cow', 'Sheep', 'Dinosaur'];
+            var randomIndex = Math.floor(Math.random() * items.length);
+            return items[randomIndex];
+        }
+    </script>
+</body>
+</html>
